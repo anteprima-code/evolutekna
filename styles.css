@@ -1,0 +1,464 @@
+/* =========================================================================
+   Evolutekna Holding — landing page
+   Valori tipografici, cromatici e dimensionali estratti dal file Figma.
+   Base = desktop 1280px (identico al design). Sotto i 1280px: responsive.
+   ========================================================================= */
+
+:root{
+  --ink:#3e3872;      /* viola principale            */
+  --ink2:#443e77;     /* viola titoli sezione        */
+  --mauve:#8580ae;    /* viola chiaro / barra nav    */
+  --lilac:#a88ef0;    /* viola pulsante primario     */
+  --lav:#b7b3de;      /* testo su fondo scuro        */
+  --grey:#706e84;     /* testo corrente su bianco    */
+  --white:#fff;
+  --font:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{background:#fff;scroll-behavior:smooth}
+body{margin:0;background:#fff;font-family:var(--font);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;color:var(--ink)}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3,p,ul,figure{margin:0}
+ul{list-style:none;padding:0}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--lilac);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+
+.page{position:relative;max-width:1280px;margin:0 auto;overflow:hidden;background:#fff}
+
+/* decorazioni di sfondo ---------------------------------------------------*/
+.decor{position:absolute;top:0;left:0;width:100%;height:0;z-index:0;pointer-events:none}
+.decor__i{position:absolute;max-width:none}
+@media (max-width:1279px){.decor{display:none}}
+
+.about,.model,.growth,.group,.benefits,.longterm,.contact,.foot{position:relative;z-index:1}
+.hero{position:relative;z-index:2}
+
+/* =============================== TIPOGRAFIA ============================== */
+.display{font-size:80px;line-height:85px;font-weight:700;color:var(--ink2);letter-spacing:0}
+.section-head{padding:0 136px 0 165px}
+#chi-siamo{margin-top:139px;padding-top:9px}
+.section-head--growth{padding-left:160px}
+.section-head .display{margin-top:0}
+.h2{font-size:40px;line-height:42px;font-weight:700;color:var(--ink)}
+.h3{font-size:40px;line-height:43px;font-weight:700;color:var(--ink)}
+.eyebrow{font-size:18px;line-height:23px;font-weight:600;color:var(--ink);margin-bottom:2px}
+.eyebrow--20{font-size:20px;line-height:25px;margin-bottom:4px}
+.body{font-size:20px;line-height:25px;font-weight:700;color:var(--grey)}
+.body--mauve{color:var(--mauve)}
+.body + .body{margin-top:25px}
+
+/* ================================= TOPBAR ================================ */
+.topbar{position:absolute;top:0;left:0;right:0;z-index:20;height:39px;background:var(--mauve)}
+.topbar__in{position:relative;height:39px;max-width:1280px;margin:0 auto}
+.logo{position:absolute;left:33px;top:0;display:block}
+.logo img{width:159px;height:37px}
+.nav{position:absolute;right:43px;top:10px;display:flex;gap:43px}
+.nav a{font-size:15px;line-height:19px;font-weight:700;color:var(--white);white-space:nowrap}
+.nav a:hover{opacity:.75}
+.navtoggle{display:none;position:absolute;right:20px;top:8px;width:26px;height:22px;padding:4px 0}
+.navtoggle span{display:block;height:2px;background:#fff;border-radius:2px}
+.navtoggle span + span{margin-top:4px}
+
+/* ================================== HERO ================================= */
+.hero{height:541px;background:linear-gradient(180deg,#3e3872 84.212%,rgba(150,146,178,.55) 92.184%,rgba(255,255,255,0) 100%)}
+.hero__shape{position:absolute;left:752px;top:231px;width:542px;height:361px;z-index:2;filter:drop-shadow(11px 4px 4px rgba(0,0,0,.25))}
+.hero__in{position:relative;z-index:3;padding:124px 0 0 136px}
+.hero__title{font-size:80px;line-height:85px;font-weight:700;color:var(--white)}
+.hero__sub{margin:15px 0 0 4px;font-size:30px;line-height:38px;font-weight:700;color:var(--white)}
+.hero__cta{display:flex;gap:24px;margin:35px 0 0 7px}
+
+.btn{position:relative;display:inline-flex;align-items:center;height:54px;border-radius:27px;font-size:18px;line-height:23px;font-weight:700;color:var(--white)}
+.btn--primary{width:377px;padding-left:26px;background:var(--lilac)}
+.btn--ghost{width:291px;padding-left:19px;background:var(--mauve)}
+.btn__ico{position:absolute;top:7px;width:40px;height:40px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center}
+.btn--primary .btn__ico{right:15px}
+.btn--ghost .btn__ico{right:14px}
+.btn__ico img{width:auto}
+.btn--primary .btn__ico img{height:15px}
+.btn--ghost .btn__ico img{height:19px}
+.btn:hover{filter:brightness(1.06)}
+
+/* ========================= INTRO + PILASTRI + CHI SIAMO ================== */
+.about{padding-top:15px;padding-bottom:47px}
+.about__lead{margin-left:138px;width:652px;font-size:20px;line-height:25px;font-weight:700;color:var(--grey)}
+
+.pillars{display:flex;justify-content:space-between;margin-top:73px;padding:0 126px}
+.pillar{position:relative;display:flex;flex-direction:column;align-items:center}
+.pillar__img{height:240px;width:240px}
+.pillar__img--s2{height:226px;width:226px;margin:7px 0}
+.pillar__img--s3{height:230px;width:230px;margin:5px 0}
+.pillar__shadow{position:absolute;top:216px;left:50%;transform:translateX(-50%);width:144px;height:24px;
+  background:radial-gradient(50% 50% at 50% 50%,#111c29 0%,#3c4855 11%,#7d8996 28%,#acb8c5 42%,#c9d6e3 53%,#d4e1ee 59%,#e3ebf4 65%,#f3f6fa 74%,#fcfdfd 85%,#fff 100%);
+  mix-blend-mode:multiply}
+.pillar__t{margin-top:51px;font-size:20px;line-height:25px;font-weight:800;color:var(--ink);text-align:center}
+
+.split{display:flex;align-items:stretch;gap:52px;padding:0 136px 0 165px;margin-top:40px}
+.split__text{flex:0 0 473px}
+.split__media{flex:0 0 454px;position:relative;align-self:stretch}
+.split__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:40px}
+.split .h2{margin-bottom:23px}
+
+/* ========================== MODELLO OPERATIVO =========================== */
+.model{background:var(--ink);padding:54px 0 103px}
+.model__in{position:relative;display:flex;gap:251px;padding-left:160px}
+.model__col{width:357px}
+.model__intro{width:357px}
+.model__title{font-size:80px;line-height:85px;font-weight:700;color:var(--white)}
+.model__lead{margin-top:14px;width:302px;font-size:20px;line-height:25px;font-weight:700;color:var(--lav)}
+
+.feat__ico{display:block}
+.feat__t{font-size:30px;line-height:38px;font-weight:800;color:var(--white)}
+.feat__d{font-size:22px;line-height:28px;font-weight:700;color:var(--lav)}
+
+.model__left{width:357px;display:flex;flex-direction:column}
+.model__right{width:357px;display:flex;flex-direction:column}
+.feat--a{margin-top:78px}
+.feat--a .feat__ico{margin-left:2px}
+.feat--a .feat__t{margin-top:36px}
+.feat--a .feat__d{margin-top:27px;width:352px}
+.feat--b{margin-top:129px;margin-left:5px}
+.feat--b .feat__t{margin-top:38px}
+.feat--b .feat__d{margin-top:24px;width:312px}
+.feat--c{margin-top:67px}
+.feat--c .feat__t{margin-top:38px}
+.feat--c .feat__d{margin-top:24px;width:352px}
+.feat--d{margin-top:43px;margin-left:5px}
+.feat--d .feat__t{margin-top:36px}
+.feat--d .feat__d{margin-top:14px;width:331px}
+.model__shape{margin-top:23px;margin-left:-130px;width:542px;height:361px;max-width:none}
+
+/* ================================ CRESCITA =============================== */
+.growth{padding-top:75px;padding-bottom:122px}
+.section-head--growth{padding-top:0}
+.split--growth{margin-top:40px;padding-left:160px;gap:105px}
+.split--growth .split__text{flex:0 0 425px}
+.split--growth .h2{margin-bottom:23px}
+
+.cards{position:relative;height:284px;margin-top:74px}
+.card{position:absolute;top:0;height:284px;border-radius:40px;background:var(--ink)}
+.card--a{left:-35px;width:673px;padding:30px 0 0 200px}
+.card--b{left:635px;width:755px;padding:30px 0 0 145px}
+.card__t{font-size:40px;line-height:36px;font-weight:700;color:var(--white)}
+.card__d{margin-top:26px;font-size:20px;line-height:25px;font-weight:700;color:var(--lav)}
+.card--a .card__d{width:310px;margin-left:2px}
+.card--b .card__d{width:290px}
+.cards__badge{position:absolute;left:580px;top:75px;width:120px;height:120px;border-radius:50%;background:var(--mauve);display:flex;align-items:center;justify-content:center;z-index:2}
+.cards__badge img{width:106px;height:101px;margin:-4px 0 0 0}
+
+/* =============================== IL GRUPPO =============================== */
+.group{padding:0 0 191px}
+.group .display{margin-left:153px}
+.group__lead{margin:29px 0 0 153px;width:461px}
+
+.company{display:flex;align-items:flex-start;margin-top:66px}
+.company--energeia{margin-top:104px}
+.company__logo{position:relative}
+.company__logo--itc{margin-left:198px;width:180px}
+.company__logo--itc img{width:180px;height:181px}
+.company__logo--ene{margin-left:87px;width:402px}
+.company__logo--ene img{width:402px;height:223px;object-fit:cover;object-position:center}
+.company__shadow{position:absolute;width:276px;height:25px;
+  background:radial-gradient(50% 50% at 50% 50%,#111c29 0%,#3c4855 11%,#7d8996 28%,#acb8c5 42%,#c9d6e3 53%,#d4e1ee 59%,#e3ebf4 65%,#f3f6fa 74%,#fcfdfd 85%,#fff 100%);
+  mix-blend-mode:multiply}
+.company__logo--itc .company__shadow{left:-48px;top:199px}
+.company__logo--ene .company__shadow{left:63px;top:223px}
+.company__body{margin-left:78px;margin-top:32px}
+.company--energeia .company__body{margin-left:-29px;margin-top:47px}
+.company__t{font-size:50px;line-height:45px;font-weight:700;color:var(--ink2);margin-left:9px}
+.company__s{margin:4px 0 0 9px;font-size:20px;line-height:25px;font-weight:700;color:var(--mauve)}
+.pill{position:relative;display:flex;align-items:center;justify-content:center;width:187px;height:42px;margin:15px 0 0 9px;border-radius:21px;background:var(--ink)}
+.company--energeia .pill{margin-top:14px}
+.pill span{width:177px;margin-left:-19px;text-align:center;font-size:18px;line-height:23px;font-weight:700;color:var(--white)}
+.pill__ico{position:absolute;right:7px;top:5px;width:32px;height:32px;border-radius:50%;background:var(--mauve);display:flex;align-items:center;justify-content:center}
+.pill__ico img{width:19px;height:11px}
+.pill:hover{filter:brightness(1.15)}
+
+/* ============================ VANTAGGI MODELLO =========================== */
+.benefits{padding:0 0 102px}
+.benefits .display{margin-left:150px}
+.benefits__grid{display:flex;align-items:flex-start;gap:188px;margin-top:46px;padding-left:150px}
+.benefits__intro{flex:0 0 312px;min-width:0;margin-top:1px}
+.benefits__intro .h3{white-space:nowrap}
+.benefits__intro .body{margin-top:12px}
+.acc{flex:0 0 654px}
+.acc__item + .acc__item{margin-top:15px}
+.acc__head{position:relative;display:flex;align-items:center;width:100%;height:56px;padding-left:80px;border-radius:28px;background:var(--mauve);text-align:left}
+.acc__item:nth-child(even) .acc__head{background:var(--ink)}
+.acc__ico{position:absolute;left:14px;top:7px;width:42px;height:42px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;transition:transform .25s ease}
+.acc__item:nth-child(even) .acc__ico{background:var(--ink)}
+.acc__ico img{width:15px;height:23px}
+.acc__label{font-size:20px;line-height:25px;font-weight:700;color:var(--white)}
+.acc__panel{display:none;padding:6px 0 0 80px}
+.acc__item.is-open .acc__panel{display:block}
+.acc__panel p{width:405px;font-size:17px;line-height:21px;font-weight:700;color:var(--mauve)}
+.acc__item:nth-child(3){margin-top:13px}
+
+/* ============================== LUNGO TERMINE ============================ */
+.longterm{height:536px;overflow:hidden;background:var(--ink)}
+.longterm::before{content:"";position:absolute;left:-4px;top:-146px;width:1839px;height:680px;
+  background:url("assets/photo-globalchart.jpg") center/cover no-repeat;transform:scaleX(-1)}
+.longterm::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(68,62,119,.12) 0%,#3e3872 58.503%)}
+.longterm__in{position:relative;z-index:2;padding:81px 0 0 150px}
+.longterm__t{font-size:80px;line-height:85px;font-weight:700;color:var(--white)}
+.longterm__d{margin-top:23px;width:584px;font-size:20px;line-height:25px;font-weight:700;color:var(--lav)}
+
+/* ================================ CONTATTI =============================== */
+.contact{padding:52px 0 64px 153px}
+.contact__t{font-size:80px;line-height:85px;font-weight:700;color:var(--ink2)}
+.form{margin-top:28px;width:997px}
+.field{display:block;width:997px;height:50.4px;padding:0 28px;border:1px solid var(--ink);border-radius:25.2px;
+  background:transparent;font-family:var(--font);font-size:18px;line-height:23px;font-weight:500;color:var(--ink)}
+.field + .field{margin-top:12.2px}
+.field--area{height:113px;padding:13px 28px;resize:vertical}
+.field::placeholder{color:var(--ink);opacity:1}
+.field:focus{outline:none;border-color:var(--lilac);box-shadow:0 0 0 1px var(--lilac)}
+.submit{display:flex;align-items:center;justify-content:center;width:122.4px;height:50.4px;margin-top:12.2px;
+  border-radius:25.2px;background:var(--ink);font-size:20px;line-height:25px;font-weight:500;color:var(--white)}
+.submit:hover{filter:brightness(1.2)}
+
+/* ================================= FOOTER ================================ */
+.foot{background:var(--ink)}
+.foot__in{display:flex;justify-content:space-between;padding:40px 136px 0 153px}
+.foot__t{font-size:20px;line-height:25px;font-weight:700;color:var(--white)}
+.foot__d{margin-top:23px;width:387px;font-size:15px;line-height:19px;font-weight:700;color:var(--lav)}
+.foot__col--social{text-align:right}
+.foot__social{display:flex;justify-content:flex-end;align-items:center;gap:22px;margin-top:23px;height:19px}
+.foot__social a{display:flex;align-items:center;justify-content:center;height:16px}
+.foot__social img{height:16px;width:auto}
+.foot__social a:hover{opacity:.7}
+.foot__legal{display:flex;align-items:center;justify-content:center;height:26px;margin-top:42px;
+  background:var(--mauve);font-size:10px;line-height:13px;font-weight:700;color:var(--white);text-align:center;padding:0 16px}
+
+.totop{position:fixed;right:28px;bottom:28px;z-index:60;width:52px;height:52px;border-radius:50%;
+  background:var(--lilac);display:flex;align-items:center;justify-content:center;
+  box-shadow:0 10px 26px rgba(31,27,62,.35);
+  opacity:0;visibility:hidden;transform:translateY(10px);
+  transition:opacity .25s ease,transform .25s ease,visibility .25s ease,background .2s ease}
+.totop.is-visible{opacity:1;visibility:visible;transform:none}
+.totop img{width:15px;height:19px;transform:rotate(180deg)}
+.totop:hover{background:var(--ink)}
+
+/* =========================================================================
+   RESPONSIVE
+   ========================================================================= */
+
+/* ---------- laptop / tablet orizzontale : 1024 – 1279 ---------- */
+@media (max-width:1279px){
+  /* sotto i 1280px il testo si dispone naturalmente: tolgo le interruzioni del design */
+  .about__lead br,.body br,.feat__d br,.model__lead br,.card__d br,
+  .group__lead br,.acc__panel br,.longterm__d br,.foot__d br{display:none}
+
+  .page{max-width:none}
+  .topbar__in{padding:0 40px}
+  .logo{left:40px}
+  .nav{right:40px;gap:28px}
+
+  .hero{height:auto;padding-bottom:64px}
+  .hero__in{padding:96px 6.5vw 0}
+  .hero__title{font-size:64px;line-height:70px}
+  .hero__sub{font-size:26px;line-height:34px;margin-left:0}
+  .hero__cta{margin-left:0}
+  .hero__shape{left:auto;right:-40px;top:150px;width:420px;height:280px}
+
+  .about{padding-top:40px}
+  .about__lead{margin-left:6.5vw;width:auto;max-width:652px;padding-right:6.5vw}
+  .pillars{padding:0 6.5vw;gap:32px}
+  .split{padding:0 6.5vw;gap:40px;margin-top:100px}
+  .split__text{flex:1 1 auto}
+  .split__media{flex:0 1 454px;min-width:0}
+  .split__media img{width:100%;height:auto;aspect-ratio:454/425}
+
+  .model__in{padding-left:6.5vw;padding-right:6.5vw;gap:6vw}
+  .model__left,.model__right,.model__intro,.model__col{width:auto;flex:1 1 0;min-width:0}
+  .model__title{font-size:64px;line-height:62px}
+  .model__lead,.feat__d{width:auto!important}
+  .model__shape{margin-left:0;width:100%;max-width:542px;height:auto}
+  .feat--b,.feat--d{margin-left:0}
+
+  .growth{padding-top:60px}
+  .split--growth{padding-left:6.5vw;gap:40px}
+  .split--growth .split__text{flex:1 1 auto}
+  .cards{height:auto;display:flex;gap:0;padding:0 6.5vw;margin-top:60px}
+  .card{position:static;left:auto;width:auto;height:auto;flex:1 1 0;min-height:284px}
+  .card--a{padding:30px 40px 40px 40px;border-radius:40px 0 0 40px}
+  .card--b{padding:30px 40px 40px 80px;border-radius:0 40px 40px 0}
+  .card--a .card__d,.card--b .card__d{width:auto;margin-left:0}
+  .cards__badge{left:50%;top:50%;transform:translate(-50%,-50%)}
+
+  .group{padding-bottom:110px}
+  .group .display,.benefits .display{margin-left:6.5vw}
+  .group__lead{margin-left:6.5vw;width:auto;max-width:461px;padding-right:6.5vw}
+  .company{padding:0 6.5vw;align-items:center;gap:40px}
+  .company__logo--itc,.company__logo--ene{margin-left:0}
+  .company__shadow{display:none}
+  .company__body,.company--energeia .company__body{margin-left:0;margin-top:0}
+
+  .benefits__grid{padding:0 6.5vw;gap:40px}
+  .benefits__intro{flex:0 1 312px}
+  .benefits__intro .h3{white-space:normal}
+  .acc{flex:1 1 auto;min-width:0}
+  .acc__panel p{width:auto}
+
+  .longterm{height:auto;padding-bottom:64px}
+  .longterm::before{left:0;top:0;width:100%;height:100%;transform:none;
+    background:url("assets/photo-globalchart.jpg") center/cover no-repeat}
+  .longterm::after{background:linear-gradient(180deg,rgba(62,56,114,.55) 0%,#3e3872 62%)}
+  .longterm__in{padding:72px 6.5vw 0}
+  .longterm__t{font-size:60px;line-height:66px}
+  .longterm__d{width:auto;max-width:584px}
+
+  .contact{padding:56px 6.5vw 64px}
+  .form,.field{width:100%}
+
+  .foot__in{padding:40px 6.5vw 0}
+  .foot__d{width:auto;max-width:387px}
+  .display,.contact__t{font-size:64px;line-height:70px}
+  .section-head{padding:0 6.5vw}
+  .section-head--growth{padding-left:6.5vw}
+}
+
+/* ---------- tablet verticale : 768 – 1023 ---------- */
+@media (max-width:1023px){
+  .hero__title{font-size:52px;line-height:58px}
+  .hero__sub{font-size:22px;line-height:30px}
+  .hero__shape{width:320px;height:213px;top:200px;right:-60px;opacity:.9}
+  .split,.split--growth{flex-direction:column;gap:40px}
+  .split__text,.split--growth .split__text{flex:1 1 auto;width:100%;padding-top:0}
+  .split__media{flex:1 1 auto;width:100%;position:static;min-height:0}
+  .split__media img{position:static;height:auto;aspect-ratio:454/425}
+  .model__in{flex-direction:column;gap:0}
+  .model__left,.model__right{display:contents}
+  .model__intro{margin-bottom:0;order:1}
+  .feat--a{order:2}.feat--b{order:3}.feat--c{order:4}.feat--d{order:5}
+  .model__shape{order:6}
+  .feat--a{margin-top:56px}
+  .feat--b,.feat--c,.feat--d{margin-top:56px}
+  .model__shape{margin-top:40px;align-self:center}
+  .cards{flex-direction:column;gap:0}
+  .card{flex:0 0 auto;min-height:0}
+  .card--a{border-radius:40px 40px 0 0;padding:40px 40px 88px}
+  .card--b{border-radius:0 0 40px 40px;padding:88px 40px 40px}
+  .cards__badge{top:50%;left:50%;transform:translate(-50%,-50%)}
+  .benefits__grid{flex-direction:column;gap:40px}
+  .benefits__intro{flex:1 1 auto}
+  .acc{width:100%}
+  .display,.contact__t{font-size:52px;line-height:58px}
+  .model__title{font-size:52px;line-height:56px}
+  .longterm__t{font-size:48px;line-height:54px}
+  .company{flex-direction:row;align-items:center}
+  .company__logo--ene img{width:280px;height:155px}
+  .company__t{font-size:40px;line-height:42px;margin-left:0}
+  .company__s{margin-left:0}
+  .pill{margin-left:0}
+  .foot__in{gap:32px}
+}
+
+/* ---------- mobile : < 768 ---------- */
+@media (max-width:767px){
+  /* barra sticky: il menu si apre spingendo il contenuto, non lo copre */
+  .topbar{position:sticky;top:0;height:auto}
+  .topbar__in{position:relative;height:auto;padding-top:56px}
+  .logo{left:20px;top:13px}
+  .logo img{width:128px;height:30px}
+  .navtoggle{display:block;right:18px;top:17px;z-index:2}
+  .nav{position:static;flex-direction:column;gap:0;padding:0 20px;
+    max-height:0;overflow:hidden;transition:max-height .28s ease}
+  .nav.is-open{max-height:400px;padding:2px 20px 12px}
+  .nav a{display:block;padding:13px 0;font-size:16px;line-height:22px;
+    border-top:1px solid rgba(255,255,255,.18)}
+
+  .hero{padding-bottom:48px;display:flex;flex-direction:column}
+  .hero__in{order:1;padding:44px 20px 0}
+  .hero__shape{order:2}
+  .hero__title{font-size:36px;line-height:42px}
+  .hero__sub{font-size:18px;line-height:26px;margin-top:12px}
+  .hero__sub br{display:none}
+  .hero__cta{flex-direction:column;gap:12px;margin-top:28px}
+  .btn{width:100%;max-width:340px;height:52px;padding-left:22px;font-size:16px}
+  .btn--primary,.btn--ghost{width:100%;max-width:340px}
+  .btn__ico{width:36px;height:36px;top:8px}
+  .hero__shape{position:relative;left:auto;right:auto;top:auto;width:240px;height:160px;margin:28px auto 0;filter:none}
+
+  .about{padding-top:32px}
+  .about__lead{margin:0;padding:0 20px;font-size:17px;line-height:23px}
+  .pillars{flex-direction:column;align-items:center;gap:48px;padding:0 20px;margin-top:40px}
+  .pillar__img,.pillar__img--s2,.pillar__img--s3{width:180px;height:180px;margin:0}
+  .pillar__shadow{top:160px;width:120px;height:20px}
+  .pillar__t{margin-top:34px;font-size:18px;line-height:23px}
+
+  .split,.split--growth{padding:0 20px;margin-top:28px}
+  #chi-siamo{margin-top:64px}
+  .split__media img{border-radius:24px}
+  .h2,.h3{font-size:28px;line-height:32px}
+  .split .h2,.split--growth .h2{margin-bottom:16px}
+  .body{font-size:17px;line-height:23px}
+  .body + .body{margin-top:18px}
+  .eyebrow--20{font-size:17px;line-height:22px}
+
+  .model{padding:48px 0 56px}
+  .model__in{padding:0 20px}
+  .model__title{font-size:36px;line-height:38px}
+  .model__lead{font-size:17px;line-height:23px;margin-top:20px}
+  .feat--a,.feat--b,.feat--c,.feat--d{margin-top:44px}
+  .feat__ico{height:56px;width:auto}
+  .feat__t{font-size:22px;line-height:28px;margin-top:22px!important}
+  .feat__d{font-size:17px;line-height:23px;margin-top:14px!important}
+  .feat__d br,.model__lead br,.foot__d br{display:none}
+  .model__shape{width:220px;margin-top:32px}
+
+  .growth{padding-top:48px;padding-bottom:64px}
+  .cards{padding:0 20px;margin-top:48px}
+  .card--a{padding:32px 24px 78px;border-radius:24px 24px 0 0}
+  .card--b{padding:78px 24px 32px;border-radius:0 0 24px 24px}
+  .card--a,.card--b{min-height:0;flex:0 0 auto}
+  .card__t{font-size:26px;line-height:30px}
+  .card__d{font-size:17px;line-height:23px;margin-top:16px}
+  .card__d br{display:none}
+  .cards__badge{width:88px;height:88px}
+  .cards__badge img{width:76px;height:auto}
+
+  .display,.contact__t{font-size:34px;line-height:40px}
+  .section-head{padding:0 20px}
+  .section-head--growth{padding-left:20px}
+  .contact__t br,.section-head .display br{display:none}
+  .group{padding-bottom:64px}
+  .group .display,.benefits .display{margin-left:20px;padding-right:20px}
+  .group__lead{margin:20px 0 0;padding:0 20px}
+  .company,.company--energeia{flex-direction:column;align-items:flex-start;gap:24px;padding:0 20px;margin-top:48px}
+  .company__logo--itc img{width:140px;height:auto}
+  .company__logo--ene img{width:220px;height:122px}
+  .company__shadow{display:none}
+  .company__t{font-size:32px;line-height:34px;margin-left:0}
+  .company__s{margin-left:0;font-size:17px;line-height:22px}
+  .pill{margin-left:0}
+
+  .benefits{padding-bottom:64px}
+  .benefits__grid{padding:0 20px;margin-top:28px}
+  .acc__head{height:auto;min-height:56px;padding:10px 16px 10px 62px;border-radius:28px}
+  .acc__ico{left:8px;top:50%;transform:translateY(-50%);width:38px;height:38px}
+  .acc__label{font-size:17px;line-height:22px}
+  .acc__panel{padding:8px 16px 0 62px}
+  .acc__panel p{font-size:15px;line-height:20px}
+
+  .longterm{padding-bottom:48px}
+  .longterm__in{padding:56px 20px 0}
+  .longterm__t{font-size:32px;line-height:38px}
+  .longterm__t br{display:none}
+  .longterm__d{font-size:17px;line-height:23px}
+
+  .contact{padding:48px 20px 56px}
+  .split{margin-top:28px}
+  .field{height:48px;padding:0 20px;font-size:16px}
+  .field--area{height:120px;padding:13px 20px}
+  .submit{width:110px;height:48px;font-size:18px}
+
+  .foot__in{flex-direction:column;padding:32px 20px 0;gap:28px}
+  .foot__col--social{text-align:left}
+  .foot__social{justify-content:flex-start}
+  .foot__legal{margin-top:28px;height:auto;padding:8px 20px;font-size:9px;line-height:13px}
+  .totop{right:16px;bottom:16px;width:46px;height:46px}
+}
