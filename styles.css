@@ -250,6 +250,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .foot__social a{display:flex;align-items:center;justify-content:center;height:16px}
 .foot__social img{height:16px;width:auto}
 .foot__social a:hover{opacity:.7}
+.foot__brand{text-decoration:underline;text-underline-offset:2px;
+  text-decoration-color:rgba(255,255,255,.45);transition:text-decoration-color .2s ease}
+.foot__brand:hover{text-decoration-color:var(--white)}
 .foot__legal{display:flex;align-items:center;justify-content:center;height:26px;margin-top:42px;
   background:var(--mauve);font-size:10px;line-height:13px;font-weight:700;color:var(--white);text-align:center;padding:0 16px}
 
