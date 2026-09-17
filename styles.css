@@ -241,6 +241,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .foot__legalinfo{margin-top:22px;max-width:420px;font-style:normal;
   font-size:13px;line-height:19px;font-weight:500;color:var(--lav)}
 .foot__legalinfo strong{display:block;font-weight:700;color:var(--white)}
+.nodetect{white-space:nowrap}
+.nodetect span{display:inline}
 .foot__legalinfo a{text-decoration:underline;text-underline-offset:2px;text-decoration-color:rgba(255,255,255,.35)}
 .foot__legalinfo a:hover{color:var(--white);text-decoration-color:var(--white)}
 .foot__col--social{text-align:right}
