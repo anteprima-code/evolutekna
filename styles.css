@@ -93,7 +93,13 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .pillars{display:flex;justify-content:space-between;margin-top:73px;padding:0 126px}
 .pillar{position:relative;display:flex;flex-direction:column;align-items:center}
 .pillar__img{height:240px;width:240px}
-[data-float]{transition:transform .5s cubic-bezier(.22,.7,.3,1);will-change:transform}
+/* parallasse: le variabili le scrive il JS, così l'effetto hover si somma senza conflitti */
+[data-float]{--fx:0px;--fy:0px;--fs:1;
+  transform:translate3d(var(--fx),var(--fy),0) scale(var(--fs));
+  transition:transform .45s cubic-bezier(.22,.7,.3,1);will-change:transform}
+.pillar:hover .pillar__img{--fs:1.07}
+.pillar:hover .pillar__shadow{opacity:.28;width:118px}
+.pillar__shadow{transition:opacity .45s ease,width .45s ease}
 .pillar__img--s2{height:226px;width:226px;margin:7px 0}
 .pillar__img--s3{height:230px;width:230px;margin:5px 0}
 .pillar__shadow{position:absolute;top:218px;left:50%;transform:translateX(-50%);width:132px;height:20px;opacity:.42;

@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=13">
+<link rel="stylesheet" href="styles.css?v=14">
 </head>
 <body id="top">
 
@@ -35,7 +35,7 @@
 
   <!-- ============================= HERO ============================= -->
   <section class="hero">
-    <img class="hero__shape" data-float="10" src="assets/shape3d.png" width="542" height="361" alt="">
+    <img class="hero__shape" data-float="22" src="assets/shape3d.png" width="542" height="361" alt="">
 
     <div class="hero__in">
       <h1 class="hero__title">Evolutekna Holding</h1>
@@ -65,17 +65,17 @@
 
       <ul class="pillars">
         <li class="pillar">
-          <img class="pillar__img" data-float="7" src="assets/icon-governance.png" width="240" height="240" alt="">
+          <img class="pillar__img" data-float="14" src="assets/icon-governance.png" width="240" height="240" alt="">
           <span class="pillar__shadow"></span>
           <h3 class="pillar__t">GOVERNANCE <br>CENTRALIZZATA</h3>
         </li>
         <li class="pillar">
-          <img class="pillar__img pillar__img--s2" data-float="10" src="assets/icon-funzioni.png" width="226" height="226" alt="">
+          <img class="pillar__img pillar__img--s2" data-float="20" src="assets/icon-funzioni.png" width="226" height="226" alt="">
           <span class="pillar__shadow"></span>
           <h3 class="pillar__t">FUNZIONI <br>CONDIVISE</h3>
         </li>
         <li class="pillar">
-          <img class="pillar__img pillar__img--s3" data-float="7" src="assets/icon-sinergie.png" width="230" height="230" alt="">
+          <img class="pillar__img pillar__img--s3" data-float="14" src="assets/icon-sinergie.png" width="230" height="230" alt="">
           <span class="pillar__shadow"></span>
           <h3 class="pillar__t">SINERGIE TRA <br>LE SOCIETA&rsquo;</h3>
         </li>
@@ -138,7 +138,7 @@
           <p class="feat__d">Un sistema integrato che <br>permette alle società <br>partecipate di beneficiare <br>di competenze, strumenti <br>e processi comuni.</p>
         </article>
 
-        <img class="model__shape" data-float="8" src="assets/shape3d.png" width="542" height="361" alt="">
+        <img class="model__shape" data-float="18" src="assets/shape3d.png" width="542" height="361" alt="">
       </div>
     </div>
   </section>
@@ -347,18 +347,20 @@
   // lieve movimento degli elementi decorativi al muoversi del cursore
   var floats = document.querySelectorAll('[data-float]');
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (floats.length && !reduced && window.matchMedia('(hover: hover)').matches) {
+  // nessun filtro sul tipo di puntatore: sui dispositivi touch l'evento non arriva e basta
+  if (floats.length && !reduced) {
     var last = 0;
-    window.addEventListener('mousemove', function (e) {
-      var now = e.timeStamp || Date.now();
+    document.addEventListener('mousemove', function (e) {
+      var now = Date.now();
       if (now - last < 16) return;          // al massimo ~60 aggiornamenti al secondo
       last = now;
       var mx = (e.clientX / window.innerWidth) * 2 - 1;
       var my = (e.clientY / window.innerHeight) * 2 - 1;
       for (var i = 0; i < floats.length; i++) {
         var el = floats[i];
-        var d = parseFloat(el.getAttribute('data-float')) || 6;
-        el.style.transform = 'translate3d(' + (mx * d).toFixed(2) + 'px,' + (my * d * 0.6).toFixed(2) + 'px,0)';
+        var d = parseFloat(el.getAttribute('data-float')) || 10;
+        el.style.setProperty('--fx', (mx * d).toFixed(2) + 'px');
+        el.style.setProperty('--fy', (my * d * 0.6).toFixed(2) + 'px');
       }
     }, { passive: true });
   }
