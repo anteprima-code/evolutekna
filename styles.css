@@ -248,6 +248,19 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .field--area{height:113px;padding:13px 28px;resize:vertical}
 .field::placeholder{color:var(--ink);opacity:1}
 .field:focus{outline:none;border-color:var(--lilac);box-shadow:0 0 0 1px var(--lilac)}
+
+/* consenso al trattamento dei dati nel modulo contatti ------------------- */
+.consent{display:flex;align-items:flex-start;gap:13px;margin-top:20px;max-width:997px}
+.consent input[type="checkbox"]{appearance:none;-webkit-appearance:none;flex:0 0 auto;
+  width:22px;height:22px;margin:2px 0 0;border:1.5px solid var(--ink);border-radius:6px;
+  background:transparent;cursor:pointer;transition:background .18s ease,border-color .18s ease}
+.consent input[type="checkbox"]:checked{background:var(--ink) url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2.5 8.5l3.5 3.5 7.5-8' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/13px no-repeat}
+.consent input[type="checkbox"]:focus-visible{outline:2px solid var(--lilac);outline-offset:2px}
+.consent label{font-size:15px;line-height:23px;font-weight:500;color:var(--ink);cursor:pointer}
+.consent a{text-decoration:underline;text-underline-offset:2px;text-decoration-color:rgba(62,56,114,.4)}
+.consent a:hover{text-decoration-color:var(--ink)}
+.consent__req{margin-left:3px;color:#a33c3c;font-weight:700}
+.submit{margin-top:22px}
 .submit{display:flex;align-items:center;justify-content:center;width:122.4px;height:50.4px;margin-top:12.2px;
   border-radius:25.2px;background:var(--ink);font-size:20px;line-height:25px;font-weight:500;color:var(--white)}
 .submit:hover{filter:brightness(1.2)}
@@ -498,6 +511,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .split{margin-top:28px}
   .field{height:48px;padding:0 20px;font-size:16px}
   .field--area{height:120px;padding:13px 20px}
+  .consent label{font-size:14px;line-height:21px}
   .submit{width:110px;height:48px;font-size:18px}
 
   .foot__in{flex-direction:column;padding:32px 20px 0;gap:28px}

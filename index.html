@@ -7,7 +7,7 @@
 <meta name="format-detection" content="date=no,address=no,email=no">
 <title>Evolutekna Holding</title>
 <meta name="description" content="Evolutekna Holding — una struttura integrata per guidare la crescita di realtà industriali concrete.">
-<link rel="stylesheet" href="styles.css?v=18">
+<link rel="stylesheet" href="styles.css?v=19">
 </head>
 <body id="top">
 
@@ -282,11 +282,17 @@
         <img class="decor__i" style="left:542.78px;top:183px;width:1349.44px" src="assets/deco-1.svg" alt="">
       </div>
       <h2 class="contact__t">Entra in contatto <br>con Evolutekna</h2>
-      <form class="form" action="#" method="post" novalidate>
+      <form class="form" action="#" method="post">
         <input class="field" type="text"  name="nome"      placeholder="Nome e Cognome" autocomplete="name"  required>
         <input class="field" type="email" name="email"     placeholder="Email"          autocomplete="email" required>
         <input class="field" type="tel"   name="cellulare" placeholder="Cellulare"      autocomplete="tel">
         <textarea class="field field--area" name="oggetto" placeholder="Oggetto" rows="4"></textarea>
+
+        <div class="consent">
+          <input type="checkbox" id="ev-privacy" name="privacy" required>
+          <label for="ev-privacy">Ho letto la <a href="privacy-policy.html">Privacy policy</a> e acconsento al trattamento dei miei dati personali per ricevere risposta alla richiesta.<span class="consent__req" aria-hidden="true">*</span></label>
+        </div>
+
         <button class="submit" type="submit">Invia</button>
       </form>
     </div>
@@ -332,6 +338,6 @@
   <img src="assets/arrow-4.svg" width="15" height="19" alt="">
 </a>
 
-<script src="main.js?v=18" defer></script>
+<script src="main.js?v=19" defer></script>
 </body>
 </html>
