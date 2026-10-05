@@ -1,0 +1,41 @@
+EVOLUTEKNA HOLDING - SITO WEB
+Istruzioni per la messa online
+
+-------------------------------------------------------------------
+TIPO DI SITO
+-------------------------------------------------------------------
+Sito statico in HTML, CSS e JavaScript.
+
+NON e' un sito WordPress: non richiede database MySQL, non richiede PHP
+e non e' previsto un pacchetto Duplicator (che e' un plugin WordPress e
+funziona solo su installazioni WordPress).
+
+-------------------------------------------------------------------
+COME PUBBLICARLO
+-------------------------------------------------------------------
+1. Scompattare l'archivio.
+2. Caricare TUTTO il contenuto della cartella (index.html, styles.css,
+   README.md e la cartella assets) nella directory pubblica del dominio:
+   public_html/ oppure httpdocs/ oppure www/ a seconda dell'hosting.
+3. Mantenere la struttura delle cartelle: index.html deve stare nella
+   radice, le immagini dentro assets/.
+
+Il sito e' subito online. Nessuna configurazione necessaria.
+
+-------------------------------------------------------------------
+REQUISITI DEL SERVER
+-------------------------------------------------------------------
+Nessuno in particolare. Funziona su qualsiasi hosting (Apache, Nginx,
+LiteSpeed) e anche su hosting solo-statico.
+
+Consigliato: certificato SSL attivo e redirect da http a https.
+Consigliato: redirect da www a non-www (o viceversa), a scelta.
+
+-------------------------------------------------------------------
+NOTE
+-------------------------------------------------------------------
+- Unica risorsa esterna: il font Plus Jakarta Sans da Google Fonts.
+- Il modulo contatti e' predisposto graficamente ma non ha ancora un
+  indirizzo di destinazione: va collegato a uno script di invio lato
+  server oppure a un servizio esterno.
+- Peso totale: circa 1,5 MB.
